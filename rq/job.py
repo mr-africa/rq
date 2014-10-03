@@ -505,8 +505,8 @@ class Job(object):
         if self.func_name is None:
             return None
 
-        arg_list = [repr(arg) for arg in self.args]
-        arg_list += ['%s=%r' % (k, v) for k, v in self.kwargs.items()]
+        arg_list = [unicode(arg) for arg in self.args]
+        arg_list += [u'%s=%r' % (k, v) for k, v in self.kwargs.items()]
         args = u', '.join(arg_list)
         return u'%s(%s)' % (self.func_name, args)
 
