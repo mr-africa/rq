@@ -507,8 +507,8 @@ class Job(object):
 
         arg_list = [repr(arg) for arg in self.args]
         arg_list += ['%s=%r' % (k, v) for k, v in self.kwargs.items()]
-        args = ', '.join(arg_list)
-        return '%s(%s)' % (self.func_name, args)
+        args = u', '.join(arg_list)
+        return u'%s(%s)' % (self.func_name, args)
 
     def cleanup(self, ttl=None, pipeline=None):
         """Prepare job for eventual deletion (if needed). This method is usually
